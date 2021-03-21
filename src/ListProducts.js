@@ -3,7 +3,7 @@ import './index.css';
 
 
 export default function ListProducts ({productItems}) {
-    console.log(productItems+"(((((((((((((((((");
+    console.log(productItems);
     // productIcons.push(product);
     return (
         <div>
@@ -13,9 +13,8 @@ export default function ListProducts ({productItems}) {
             )}
             </div>   */}
             <ul>
-                {productItems.map((item) => {
-                    <li key={item.id}>{item.name}</li>
-                })}
+                {productItems.map((item) => <li key={item.toString()}>{item.value}</li>
+                )}
             </ul>
         </div>
     )

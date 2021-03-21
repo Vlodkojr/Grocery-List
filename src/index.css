@@ -14,9 +14,9 @@ body{
   flex-direction: column;
   background-color: rgb(236, 235, 226);
 }
-.entryWrapper {
-  /* margin: 0 auto; */
-}
+/* .entryWrapper {
+   margin: 0 auto; 
+} */
 
 .listWrapper {
   margin: 10px auto;

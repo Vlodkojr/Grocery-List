@@ -7,17 +7,18 @@ function App() {
   const [product, setProduct] = useState("");
   const [productItems, setProductItems] = useState([]);
 
-  const addItem = event => {
-    event.preventDefault();
-    setProductItems([
-      ...productItems,
-      {
-        id: productItems.length,
-        name: product
-      }
-    ]);
-    setProduct("");
-  };
+  // useEffect(() => setProductItems(() => [{value: product}, ...productItems]), [product])
+  // const addItem = event => {
+  //   event.preventDefault();
+  //   setProductItems([
+  //     ...productItems,
+  //     {
+  //       id: productItems.length,
+  //       name: product
+  //     }
+  //   ]);
+  //   setProduct("");
+  // };
   // let productIcons = [];
   // setProductIcons = () => productIcons.push(product)
 
@@ -25,13 +26,14 @@ function App() {
   return (
     <div className="wrapper">
       <div className="innerWrapper">
-        <form onSubmit={addItem}>
-          <Grocery_Entry_View setProduct = {setProduct}
-                              addItem={addItem}
-          />
-        </form>
-        <Grocery_List_View product = {product}
-                           setProductItems = {setProductItems} 
+        <Grocery_Entry_View setProduct = {setProduct}
+                            setProductItems={setProductItems}
+                            productItems={productItems} 
+                            product={product}
+                            />
+        <Grocery_List_View product = {product} 
+        // arr = {() => setProductItems([{product}, ...productItems])}
+                           setProductItems = {setProductItems}
                            productItems = {productItems}
         />
       </div>
